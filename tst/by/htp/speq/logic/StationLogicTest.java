@@ -20,5 +20,10 @@ public class StationLogicTest {
 	public void testReadCatalogNotNull() throws FileNotFoundException {
 		assertNotNull(logic.readCatalog());
 	}
+	
+	@Test
+	public void testReadRentedCatalogNotNull() throws FileNotFoundException {
+		assertNotNull(logic.readRentedCatalog());
+	}
 
 }

@@ -1,34 +1,24 @@
 package by.htp.speq.station;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import by.htp.speq.entity.RentUnit;
 
 public class Catalog {
 
-	private static final int DEFAULT_CAPACITY = 10;
-
-	private RentUnit[] units;
-	private int lastIndex;
+	private List<RentUnit> units;
 
 	public Catalog() {
-		units = new RentUnit[DEFAULT_CAPACITY];
-		lastIndex = 0;
+		units = new ArrayList<RentUnit>();
 	}
 
-	public int getLastIndex() {
-		return lastIndex;
-	}
-
-	public RentUnit[] getUnits() {
+	public List<RentUnit> getUnits() {
 		return units;
-	}
-	
-	public RentUnit getLastRentUnit() {
-		return units[lastIndex-1];
 	}
 
 	public void addRentUnit(RentUnit unit) {
-		units[lastIndex] = unit;
-		lastIndex++;
+		units.add(unit);
 	}
 	
 	

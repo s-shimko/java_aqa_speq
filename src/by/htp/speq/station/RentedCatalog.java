@@ -18,7 +18,7 @@ public class RentedCatalog extends Catalog {
 
 	@Override
 	public String toString() {
-		return "renter=" + renter + ", getUnits()=" + Arrays.toString(getUnits()) + "]";
+		return "renter=" + renter + ", getUnits()=" + getUnits() + "]";
 	}
 	
 

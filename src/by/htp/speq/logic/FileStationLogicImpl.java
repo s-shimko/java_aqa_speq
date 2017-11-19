@@ -1,27 +1,31 @@
 package by.htp.speq.logic;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import by.htp.speq.entity.Equipment;
 import by.htp.speq.entity.RentUnit;
 import by.htp.speq.station.Catalog;
+import by.htp.speq.station.Client;
 import by.htp.speq.station.RentedCatalog;
+import by.htp.speq.view.ConsoleMenu;
 
 public class FileStationLogicImpl implements StationLogic {
 
 	private static final String FILE_PATH_STATION_INFO = "resources/station_info.txt";
 	private static final String FILE_PATH_RENTED_UNITS = "resources/rented_units.txt";
-	private static final int DEFAULT_CAPACITY = 10;
 	private static final String DELIMETER = ",";
 
 	@Override
 	public Catalog readCatalog() throws FileNotFoundException {
 
 		Catalog catalog = new Catalog();
-		String[] lines = readData(FILE_PATH_STATION_INFO);
+		ArrayList<String> lines = readData(FILE_PATH_STATION_INFO);
 
 		for (String line : lines) {
 			RentUnit unit = createRentUnit(line);
@@ -30,17 +34,16 @@ public class FileStationLogicImpl implements StationLogic {
 
 		return catalog;
 	}
-	
+
 	@Override
 	public RentedCatalog readRentedCatalog() throws FileNotFoundException {
 		RentedCatalog rentedCatalog = new RentedCatalog();
-		String[] lines = readData(FILE_PATH_RENTED_UNITS);
-		
+		ArrayList<String> lines = readData(FILE_PATH_RENTED_UNITS);
+
 		for (String line : lines) {
 			RentUnit unit = createRentUnit(line);
 			rentedCatalog.addRentUnit(unit);
 		}
-
 		return rentedCatalog;
 	}
 
@@ -63,20 +66,10 @@ public class FileStationLogicImpl implements StationLogic {
 		return values;
 	}
 
-	private String[] readData(String file) {
-		// FileInputStream fis = new FileInputStream(file);
-		// BufferedInputStream bis = new BufferedInputStream(fis);
-
-		// try {
-		// int b;
-		// while((b = fis.read()) != -1)
-		// System.out.print((char)b);
-		// } catch (IOException e) {
-		// e.printStackTrace();
-		// }
+	private ArrayList<String> readData(String file) {
 		BufferedReader br = null;
-		int lastLineIndex = 0;
-		String[] lines = new String[DEFAULT_CAPACITY];
+		ArrayList<String> lines = new ArrayList<String>();
+
 		try {
 
 			FileReader fr = new FileReader(file);
@@ -85,11 +78,7 @@ public class FileStationLogicImpl implements StationLogic {
 			String line;
 
 			while ((line = br.readLine()) != null) {
-				if (lastLineIndex >= lines.length) {
-					lines = increaseCapacity(lines);
-				}
-				lines[lastLineIndex] = line;
-				lastLineIndex++;
+				lines.add(line);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -100,33 +89,53 @@ public class FileStationLogicImpl implements StationLogic {
 				e.printStackTrace();
 			}
 		}
-		return trimDataToSize(lines, lastLineIndex);
+		return lines;
 
 	}
 
-	private String[] increaseCapacity(String[] lines) {
-		int currentLine = 0;
-		String[] newLines = new String[lines.length + DEFAULT_CAPACITY];
-		for (String line : lines) {
-			newLines[currentLine] = line;
-			currentLine++;
-		}
-		return newLines;
-	}
-
-	private String[] trimDataToSize(String[] lines, int linesCount) {
-		int currentLine = 0;
-		String[] trimedLines = new String[linesCount];
-
-		for (String line : lines) {
-			if (line != null) {
-				trimedLines[currentLine] = line;
-				currentLine++;
+	private void writeData(ArrayList<String> arrList, String file) {
+		BufferedWriter writer = null;
+		try {
+			writer = new BufferedWriter(new FileWriter(file));
+			for (String unit : arrList) {
+				writer.write(unit + "\n");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				writer.close();
+			} catch (Exception e) {
 			}
 		}
-		return trimedLines;
 	}
 
+	public void addItemToRent(int index) {
+		ArrayList<String> unitsForRent = readData(FILE_PATH_STATION_INFO);
+		String takenItem = unitsForRent.get(index - 1);
+		unitsForRent.remove(index - 1);
+		
+		ArrayList<String> unitsInRent = readData(FILE_PATH_RENTED_UNITS);
+		unitsInRent.add(takenItem);		
+		
+		writeData(unitsForRent, FILE_PATH_STATION_INFO);
+		writeData(unitsInRent, FILE_PATH_RENTED_UNITS);
+	}
 
+	@Override
+	public Client takeItemInRent() throws FileNotFoundException {
+		String toWrite = "";
+		ConsoleMenu.printMenu();
+		int input = 0;
+		try {
+			input = ConsoleMenu.readUserInput();
+			// toWrite = "string" + Integer.toString(input);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		addItemToRent(input);
+		return null;
+	}
 
 }

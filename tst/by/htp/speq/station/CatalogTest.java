@@ -2,6 +2,8 @@ package by.htp.speq.station;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,7 +21,7 @@ public class CatalogTest {
 
 	@Test
 	public void testCatalogRentUnitNotNull() {
-		RentUnit[] units = catalog.getUnits();
+		ArrayList<RentUnit> units = (ArrayList<RentUnit>) catalog.getUnits();
 		assertNotNull("RentUnit was not initialized", units);
 	}
 
@@ -33,10 +35,8 @@ public class CatalogTest {
 
 		catalog.addRentUnit(unit);
 
-		RentUnit[] units = catalog.getUnits();
-		RentUnit lastItem = catalog.getLastRentUnit();
-
-		assertEquals("RentUnit wasn't added", unit, lastItem);
+		ArrayList<RentUnit> units = (ArrayList<RentUnit>) catalog.getUnits();
+		assertEquals(units.get(0), unit);
 	}
 
 }

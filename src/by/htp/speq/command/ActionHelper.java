@@ -1,6 +1,7 @@
 package by.htp.speq.command;
 
 import by.htp.speq.command.impl.DefaultActionImpl;
+import by.htp.speq.command.impl.TakeCatalogItemInRentActionImpl;
 import by.htp.speq.command.impl.ViewCatalogActionImpl;
 import by.htp.speq.command.impl.ViewRentedItemsActionImpl;
 
@@ -16,6 +17,10 @@ public class ActionHelper {
 			break;
 		case 2:
 			action = new ViewRentedItemsActionImpl();
+			break;
+		case 3:
+			action = new TakeCatalogItemInRentActionImpl();
+			break;
 		default:
 		}
 		return action;

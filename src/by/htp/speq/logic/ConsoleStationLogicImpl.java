@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import by.htp.speq.entity.Equipment;
 import by.htp.speq.entity.RentUnit;
 import by.htp.speq.station.Catalog;
+import by.htp.speq.station.Client;
 import by.htp.speq.station.RentedCatalog;
 
 public class ConsoleStationLogicImpl implements StationLogic {
@@ -29,6 +30,12 @@ public class ConsoleStationLogicImpl implements StationLogic {
 	public RentedCatalog readRentedCatalog() {
 		RentedCatalog rentedCatalog = new RentedCatalog();
 		return rentedCatalog;
+	}
+
+	@Override
+	public Client takeItemInRent() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

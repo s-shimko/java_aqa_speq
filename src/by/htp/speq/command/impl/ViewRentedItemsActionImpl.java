@@ -1,6 +1,7 @@
 package by.htp.speq.command.impl;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import by.htp.speq.command.StationAction;
 import by.htp.speq.entity.RentUnit;
@@ -18,7 +19,7 @@ public class ViewRentedItemsActionImpl implements StationAction {
 	@Override
 	public void performAction() throws FileNotFoundException {
 		RentedCatalog rentedCatalog = logic.readRentedCatalog();
-		RentUnit[] units = rentedCatalog.getUnits();
+		ArrayList<RentUnit> units = (ArrayList<RentUnit>) rentedCatalog.getUnits();
 
 		for (RentUnit unit : units) {
 			if (unit != null) {
