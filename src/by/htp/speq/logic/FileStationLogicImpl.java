@@ -124,12 +124,9 @@ public class FileStationLogicImpl implements StationLogic {
 
 	@Override
 	public Client takeItemInRent() throws FileNotFoundException {
-		String toWrite = "";
-		ConsoleMenu.printMenu();
 		int input = 0;
 		try {
 			input = ConsoleMenu.readUserInput();
-			// toWrite = "string" + Integer.toString(input);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

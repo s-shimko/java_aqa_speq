@@ -1,3 +1,2 @@
 Bike, 2.5
 Car, 2.6
-Snowboard, 2.7

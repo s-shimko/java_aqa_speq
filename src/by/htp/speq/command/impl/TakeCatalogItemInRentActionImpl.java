@@ -30,9 +30,11 @@ public class TakeCatalogItemInRentActionImpl implements StationAction {
 		Catalog catalog = logic.readCatalog();
 		ArrayList<RentUnit> units = (ArrayList<RentUnit>) catalog.getUnits();
 
+		int index = 1;
 		for (RentUnit unit : units) {
 			if (unit != null) {
-				System.out.println(unit);
+				System.out.println(index + ". " + unit);
+				index++;
 			}
 		}
 		
