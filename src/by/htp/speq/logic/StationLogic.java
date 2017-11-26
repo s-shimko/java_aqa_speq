@@ -11,4 +11,5 @@ public interface StationLogic {
 	Catalog readCatalog() throws FileNotFoundException;
 	RentedCatalog readRentedCatalog() throws FileNotFoundException;
 	Client takeItemInRent() throws FileNotFoundException;
+	Client backItemFromRent() throws FileNotFoundException;
 }

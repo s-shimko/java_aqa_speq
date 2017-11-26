@@ -10,6 +10,7 @@ public class ConsoleMenu {
 		System.out.println("1. View catalog");
 		System.out.println("2. View equipment in rent");
 		System.out.println("3. Take equipment in rent");
+		System.out.println("4. Back equipment from rent");
 	}
 
 	public static int readUserInput() throws IOException {

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<station xmlns="http://www.example.org/station_schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/station_schema station_schema.xsd">
+	<equipment id="1">
+		<title>Snowboard</title>
+		<hour-rate>10.2</hour-rate>
+		<category>Winter</category>
+		<back-date>24-11-2017</back-date>
+	</equipment>
+	<equipment id="2">
+		<title>Bike</title>
+		<hour-rate>9.5</hour-rate>
+		<category>Summer</category>
+		<back-date>24-11-2017</back-date>
+	</equipment>
+	<equipment id="3">
+		<title>Car</title>
+		<hour-rate>9.5</hour-rate>
+		<category>Demi</category>
+		<back-date>24-11-2017</back-date>
+	</equipment>
+
+	<super-equipment id="1">
+		<title>Snowboard</title>
+		<hour-rate>3.2</hour-rate>
+		<category>Winter</category>
+		<back-date>24-11-2017</back-date>
+		<accessories>
+			<accessorie>Helmet</accessorie>
+		</accessories>
+	</super-equipment>
+	<super-equipment id="2">
+		<title>Bike</title>
+		<hour-rate>2.2</hour-rate>
+		<category>Summer</category>
+		<back-date>24-11-2017</back-date>
+		<accessories>
+			<accessorie>Carrier</accessorie>
+		</accessories>
+	</super-equipment>
+</station>

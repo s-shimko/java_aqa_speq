@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import by.htp.speq.entity.Accessorie;
 import by.htp.speq.entity.Equipment;
 import by.htp.speq.entity.RentUnit;
 import by.htp.speq.station.Catalog;
@@ -53,10 +54,12 @@ public class FileStationLogicImpl implements StationLogic {
 
 		Equipment eq = new Equipment();
 		eq.setTitle(values[0].trim());
-
+		eq.setCategory(values[2].trim());
+		
 		RentUnit unit = new RentUnit();
 		unit.setEquipment(eq);
 		unit.setHourRate(Double.parseDouble(values[1].trim()));
+		unit.setBackDate(values[3].trim());
 
 		return unit;
 	}
@@ -135,4 +138,28 @@ public class FileStationLogicImpl implements StationLogic {
 		return null;
 	}
 
+	@Override
+	public Client backItemFromRent() throws FileNotFoundException {
+		int input = 0;
+		try {
+			input = ConsoleMenu.readUserInput();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		returnItemFromRent(input);
+		return null;
+	}
+
+	public void returnItemFromRent(int index) {
+		ArrayList<String> unitsInRent = readData(FILE_PATH_RENTED_UNITS);
+		String takenItem = unitsInRent.get(index - 1);
+		unitsInRent.remove(index - 1);
+		
+		ArrayList<String> unitsForRent = readData(FILE_PATH_STATION_INFO);
+		unitsForRent.add(takenItem);		
+		
+		writeData(unitsForRent, FILE_PATH_STATION_INFO);
+		writeData(unitsInRent, FILE_PATH_RENTED_UNITS);
+	}
 }

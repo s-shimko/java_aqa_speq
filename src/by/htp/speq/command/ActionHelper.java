@@ -1,5 +1,6 @@
 package by.htp.speq.command;
 
+import by.htp.speq.command.impl.BackCatalogItemFromRentActionImpl;
 import by.htp.speq.command.impl.DefaultActionImpl;
 import by.htp.speq.command.impl.TakeCatalogItemInRentActionImpl;
 import by.htp.speq.command.impl.ViewCatalogActionImpl;
@@ -20,6 +21,9 @@ public class ActionHelper {
 			break;
 		case 3:
 			action = new TakeCatalogItemInRentActionImpl();
+			break;
+		case 4:
+			action = new BackCatalogItemFromRentActionImpl();
 			break;
 		default:
 		}

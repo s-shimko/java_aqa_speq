@@ -37,6 +37,12 @@ public class ConsoleStationLogicImpl implements StationLogic {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Client backItemFromRent() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

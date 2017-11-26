@@ -2,7 +2,7 @@ package by.htp.speq.entity;
 
 public class Equipment {
 	private String title;
-
+	private String category;
 	
 	public Equipment() {
 		super();
@@ -13,6 +13,13 @@ public class Equipment {
 		this.title = title;
 	}
 
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -23,8 +30,7 @@ public class Equipment {
 
 	@Override
 	public String toString() {
-		return "Equipment [title=" + title + "]";
+		return "Equipment [title=" + title + ", category=" + category + "]";
 	}
-	
-			
+
 }
