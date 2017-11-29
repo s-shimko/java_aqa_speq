@@ -23,7 +23,7 @@ public class ViewRentedItemsActionImpl implements StationAction {
 
 		for (RentUnit unit : units) {
 			if (unit != null) {
-				System.out.println(rentedCatalog.getRenter() + ": " + unit);
+				System.out.println(rentedCatalog.getTakenInRentDate() + ": " + unit);
 			}
 		}
 

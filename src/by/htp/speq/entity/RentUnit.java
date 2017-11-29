@@ -4,7 +4,7 @@ public class RentUnit {
 	private Equipment equipment;
 	private double hourRate;
 	private Accessorie accessorie;
-	private String backDate;
+	private String takenInRentDate;
 	
 	public RentUnit() {
 	
@@ -28,12 +28,12 @@ public class RentUnit {
 		this.equipment = equipment;
 	}
 
-	public String getBackDate() {
-		return backDate;
+	public String getTakenInRentDate() {
+		return takenInRentDate;
 	}
 
-	public void setBackDate(String backDate) {
-		this.backDate = backDate;
+	public void setTakenInRentDate(String takenInRentDate) {
+		this.takenInRentDate = takenInRentDate;
 	}
 
 	public double getHourRate() {
@@ -46,7 +46,7 @@ public class RentUnit {
 
 	@Override
 	public String toString() {
-		return "RentUnit [equipment=" + equipment + ", hourRate=" + hourRate + ", backDate=" + backDate + "]";
+		return "RentUnit [equipment=" + equipment + ", hourRate=" + hourRate + ", takenInRentDate=" + takenInRentDate + "]";
 	}
 
 	

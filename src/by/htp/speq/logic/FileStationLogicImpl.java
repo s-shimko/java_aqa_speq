@@ -59,7 +59,7 @@ public class FileStationLogicImpl implements StationLogic {
 		RentUnit unit = new RentUnit();
 		unit.setEquipment(eq);
 		unit.setHourRate(Double.parseDouble(values[1].trim()));
-		unit.setBackDate(values[3].trim());
+		unit.setTakenInRentDate(values[3].trim());
 
 		return unit;
 	}

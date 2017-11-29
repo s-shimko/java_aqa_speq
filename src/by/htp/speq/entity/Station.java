@@ -1,32 +1,43 @@
-package by.htp.speq.station;
+package by.htp.speq.entity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
-import by.htp.speq.entity.RentUnit;
+public class Station {
 
-public class RentedCatalog extends Catalog {
-
-	private String takenInRentDate = getDateToday();
-	
+	public static String RENT_DAY = getDateToday();
+	public static String CHECK_DAY = "30-11-2017";
 	public double penaltyForItem;
 
-//	 public static void main(String[] arg) {
-//	
-//	 System.out.println(getDateToday());
-//	
-//	 System.out.println(dateDifferenceInHours(takenInRentDate, CHECK_DAY + " 16:31:22"));
-//	
-//	 }
+	 public static void main(String[] arg) {
 	
-	public String getTakenInRentDate() {
-		return takenInRentDate;
+	 System.out.println(getDateToday());
+	
+	 System.out.println(dateDifferenceInHours(RENT_DAY, CHECK_DAY + " 16:31:22"));
+	
+	 }
+
+	public Station() {
+		super();
 	}
 
-	public void setTakenInRentDate(String renter) {
-		this.takenInRentDate = takenInRentDate;
+	public static String getRENT_DAY() {
+		return RENT_DAY;
+	}
+
+	public static void setRENT_DAY(String rENT_DAY) {
+		RENT_DAY = rENT_DAY;
+	}
+
+	public static String getCHECK_DAY() {
+		return CHECK_DAY;
+	}
+
+	public static void setCHECK_DAY(String cHECK_DAY) {
+		CHECK_DAY = cHECK_DAY;
 	}
 
 	static String getDateToday() {
@@ -35,6 +46,7 @@ public class RentedCatalog extends Catalog {
 		return dateFormat.format(date);
 	}
 	
+
 	static int dateDifferenceInHours(String rent_day, String check_day) {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -52,11 +64,5 @@ public class RentedCatalog extends Catalog {
 
 		return differenceInHours;
 	}
-	
-	@Override
-	public String toString() {
-		return "getUnits()=" + getUnits() + ", takenInRentDate=" + takenInRentDate + "]";
-	}
-	
 
 }

@@ -25,6 +25,12 @@ public class ActionHelper {
 		case 4:
 			action = new BackCatalogItemFromRentActionImpl();
 			break;
+//		case 5:
+//			action = new ViewEquipmentOutOfRentImpl();
+//			break;
+//		case 6:
+//			action = new FinishStationWorkImpl();
+//			break;
 		default:
 		}
 		return action;
