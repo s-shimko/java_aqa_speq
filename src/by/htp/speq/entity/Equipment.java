@@ -1,6 +1,7 @@
 package by.htp.speq.entity;
 
 public class Equipment {
+	private String type;
 	private String title;
 	private String category;
 	
@@ -12,7 +13,15 @@ public class Equipment {
 		super();
 		this.title = title;
 	}
+	
+	public String getType() {
+		return type;
+	}
 
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 	public String getCategory() {
 		return category;
 	}
@@ -30,7 +39,7 @@ public class Equipment {
 
 	@Override
 	public String toString() {
-		return "Equipment [title=" + title + ", category=" + category + "]";
+		return "type=" + type + ", title=" + title + ", category=" + category;
 	}
 
 }

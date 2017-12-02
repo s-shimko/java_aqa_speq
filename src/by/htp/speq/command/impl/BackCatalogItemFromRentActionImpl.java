@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import by.htp.speq.command.StationAction;
 import by.htp.speq.entity.RentUnit;
+import by.htp.speq.entity.RentedUnit;
 import by.htp.speq.logic.FileStationLogicImpl;
 import by.htp.speq.logic.StationLogic;
 import by.htp.speq.station.RentedCatalog;
@@ -21,7 +22,7 @@ public class BackCatalogItemFromRentActionImpl implements StationAction {
 		System.out.println("Choose which item you want to back:");
 		
 		RentedCatalog rentedCatalog = logic.readRentedCatalog();
-		ArrayList<RentUnit> units = (ArrayList<RentUnit>) rentedCatalog.getUnits();
+		ArrayList<RentedUnit> units = (ArrayList<RentedUnit>) rentedCatalog.getRentedUnits();
 
 		int n = 1;
 		for (RentUnit unit : units) {

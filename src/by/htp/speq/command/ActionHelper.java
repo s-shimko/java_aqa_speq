@@ -2,8 +2,10 @@ package by.htp.speq.command;
 
 import by.htp.speq.command.impl.BackCatalogItemFromRentActionImpl;
 import by.htp.speq.command.impl.DefaultActionImpl;
+import by.htp.speq.command.impl.FinishStationWorkImpl;
 import by.htp.speq.command.impl.TakeCatalogItemInRentActionImpl;
 import by.htp.speq.command.impl.ViewCatalogActionImpl;
+import by.htp.speq.command.impl.ViewEquipmentOutOfTermImpl;
 import by.htp.speq.command.impl.ViewRentedItemsActionImpl;
 
 public class ActionHelper {
@@ -25,12 +27,12 @@ public class ActionHelper {
 		case 4:
 			action = new BackCatalogItemFromRentActionImpl();
 			break;
-//		case 5:
-//			action = new ViewEquipmentOutOfRentImpl();
-//			break;
-//		case 6:
-//			action = new FinishStationWorkImpl();
-//			break;
+		case 5:
+			action = new ViewEquipmentOutOfTermImpl();
+			break;
+		case 6:
+			action = new FinishStationWorkImpl();
+			break;
 		default:
 		}
 		return action;

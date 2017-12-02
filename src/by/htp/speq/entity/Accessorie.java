@@ -8,11 +8,6 @@ public class Accessorie extends Equipment {
 		super();
 	}
 	
-	public Accessorie(String belongTo) {
-		super();
-		this.belongTo = belongTo;
-	}
-
 	public String getBelongTo() {
 		return belongTo;
 	}
@@ -20,6 +15,12 @@ public class Accessorie extends Equipment {
 	public void setBelongTo(String belongTo) {
 		this.belongTo = belongTo;
 	}
+
+	@Override
+	public String toString() {
+		return "type=" + super.getType() + ", title=" + super.getTitle() + ", category=" + super.getCategory() + ", belongTo=" + belongTo;
+	}
+	
 	
 
 }

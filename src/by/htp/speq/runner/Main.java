@@ -10,12 +10,16 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		ConsoleMenu.printMenu();
-		int input = ConsoleMenu.readUserInput();
+		int input = 0;
 		
-		StationAction action = ActionHelper.defineAction(input);
-		action.performAction();
+		do {
+			ConsoleMenu.printMenu();
+			input = ConsoleMenu.readUserInput();
+
+			StationAction action = ActionHelper.defineAction(input);
+			action.performAction();
+
+		} while (input != 6);
 	}
-	
-	
+
 }
