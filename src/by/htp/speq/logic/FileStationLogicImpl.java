@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-import by.htp.speq.entity.Accessorie;
+import by.htp.speq.entity.Accessory;
 import by.htp.speq.entity.Equipment;
 import by.htp.speq.entity.RentUnit;
 import by.htp.speq.entity.RentedUnit;
@@ -76,7 +76,7 @@ public class FileStationLogicImpl implements StationLogic {
 			unit.setEquipment(eq);
 			unit.setHourRate(Double.parseDouble(values[2].trim()));
 		} else {
-			Accessorie acc = new Accessorie();
+			Accessory acc = new Accessory();
 			acc.setType(values[0].trim());
 			acc.setTitle(values[1].trim());
 			acc.setCategory(values[3].trim());
@@ -106,7 +106,7 @@ public class FileStationLogicImpl implements StationLogic {
 			unit.setHourRate(Double.parseDouble(values[2].trim()));
 			unit.setTakenInRentDate(values[4].trim());
 		} else {
-			Accessorie acc = new Accessorie();
+			Accessory acc = new Accessory();
 			acc.setType(values[0].trim());
 			acc.setTitle(values[1].trim());
 			acc.setCategory(values[3].trim());

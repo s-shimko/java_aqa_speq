@@ -20,6 +20,9 @@ public class Catalog {
 	public void addRentUnit(RentUnit unit) {
 		units.add(unit);
 	}
-	
+
+	public void setUnits(List<RentUnit> units) {
+		this.units = units;
+	}
 	
 }

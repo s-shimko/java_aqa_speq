@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<station xmlns="http://www.example.org/rent_units_schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/rent_units_schema rent_units_schema.xsd">
+
+	<equipment id="1">
+		<type>Equipment</type>
+		<title>Bike</title>
+		<hour_rate>2.3</hour_rate>
+		<category>Summer</category>
+	</equipment>
+	<equipment id="2">
+		<type>Equipment</type>
+		<title>Car</title>
+		<hour_rate>2.3</hour_rate>
+		<category>Demi</category>
+	</equipment>
+	<equipment id="3">
+		<type>Equipment</type>
+		<title>Snowboard</title>
+		<hour_rate>2.3</hour_rate>
+		<category>Winter</category>
+	</equipment>
+	<accessory id="1">
+		<type>accessory</type>
+		<title>Helmet</title>
+		<hour_rate>0.3</hour_rate>
+		<category>Winter</category>
+		<belong_to>Snowboard</belong_to>
+	</accessory>
+	<accessory id="2">
+		<type>accessory</type>
+		<title>Carrrier</title>
+		<hour_rate>1.3</hour_rate>
+		<category>Summer</category>
+		<belong_to>Bike</belong_to>
+	</accessory>
+</station>
+	
+	

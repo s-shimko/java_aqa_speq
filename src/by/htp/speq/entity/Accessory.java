@@ -1,10 +1,10 @@
 package by.htp.speq.entity;
 
-public class Accessorie extends Equipment {
+public class Accessory extends Equipment {
 	
 	private String belongTo;
 
-	public Accessorie() {
+	public Accessory() {
 		super();
 	}
 	

@@ -9,6 +9,7 @@ import by.htp.speq.entity.RentedUnit;
 import by.htp.speq.logic.FileStationLogicImpl;
 import by.htp.speq.logic.StationLogic;
 import by.htp.speq.station.RentedCatalog;
+import by.htp.speq.station.StationData;
 
 public class BackCatalogItemFromRentActionImpl implements StationAction {
 	
