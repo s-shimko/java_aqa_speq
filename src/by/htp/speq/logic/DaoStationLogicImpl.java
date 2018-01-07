@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 import by.htp.speq.dao.CatalogData;
 import by.htp.speq.dao.db.CatalogDataMysqlImpl;
+import by.htp.speq.dao.parser.dom.CatalogDataDomImpl;
 import by.htp.speq.dao.parser.sTax.CatalogDataStaxImpl;
 import by.htp.speq.dao.parser.sax.CatalogDataSaxImpl;
 import by.htp.speq.station.Catalog;
@@ -16,10 +17,9 @@ public class DaoStationLogicImpl implements StationLogic {
 	{
 //		logic = new CatalogDataSaxImpl();
 //		logic = new CatalogDataStaxImpl();
+		logic  = new CatalogDataDomImpl();
 		
-//		Catalog catalog = new CatalogDataDomImpl();
-		
-		logic = new CatalogDataMysqlImpl();
+//		logic = new CatalogDataMysqlImpl();
 		
 
 	}
@@ -32,19 +32,16 @@ public class DaoStationLogicImpl implements StationLogic {
 
 	@Override
 	public RentedCatalog readRentedCatalog() throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Client takeItemInRent() throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Client backItemFromRent() throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

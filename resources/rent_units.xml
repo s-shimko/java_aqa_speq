@@ -12,13 +12,13 @@
 	<equipment id="2">
 		<type>Equipment</type>
 		<title>Car</title>
-		<hour_rate>2.3</hour_rate>
+		<hour_rate>2.2</hour_rate>
 		<category>Demi</category>
 	</equipment>
 	<equipment id="3">
 		<type>Equipment</type>
 		<title>Snowboard</title>
-		<hour_rate>2.3</hour_rate>
+		<hour_rate>2.1</hour_rate>
 		<category>Winter</category>
 	</equipment>
 	<accessory id="1">
